@@ -1,0 +1,14 @@
+[diff]
+    external = git_diff_wrapper
+
+[pager]
+    diff = 
+
+[color]
+    interactive = true
+
+[user]
+	name = Justin Hammond
+	email = justin.hammond@rackspace.com
+[alias]
+	last = log -1 HEAD
