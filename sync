@@ -1,0 +1,4 @@
+#!/bin/bash
+rsync -rv --exclude-from 'exclude-list.txt' .??* ~
+rsync -rv --exclude-from 'exclude-list.txt' README*  ~
+rsync -rv .git-completion.bash  ~
