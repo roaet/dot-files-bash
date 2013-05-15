@@ -1,5 +1,5 @@
 #!/bin/bash
 rsync -rv --exclude-from 'exclude-list.txt' .??* ~
 rsync -rv --exclude-from 'exclude-list.txt' README*  ~
-rsync -rv --exclude-from 'exclude-list.txt' .git-completion.bash  ~
-rsync -rv --exclude-from 'exclude-list.txt' .gitconfig  ~
+rsync -rv .git-completion.bash  ~
+rsync -rv .gitconfig  ~
