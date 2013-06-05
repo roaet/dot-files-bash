@@ -66,6 +66,7 @@ fi
 alias sshinit='eval `ssh-agent` && ssh-add ~/.ssh/gerrit_rsa'
 alias ping='ping -c 4'
 alias ns='netstat -alnp --protocol=inet'
+alias diskusage='du -cksh *'
 #alias search='aptitude search'
 #alias show='aptitude show'
 alias ls='ls -aF -l --color'
