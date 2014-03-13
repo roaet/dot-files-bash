@@ -88,6 +88,7 @@ alias sn='supernova'
 alias inl='inova-login'
 alias supernovawork='source ~/bin/supernova/.venv/bin/activate'
 alias workhere='source ./.venv/bin/activate'
+alias startwork='virtualenv .venv --no-site-packages --distribute --prompt="(${PWD##*/})"'
 #alias rm='rm -i'
 #------------------------------------------////
 # Functions and Scripts:
