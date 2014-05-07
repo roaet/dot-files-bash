@@ -86,6 +86,28 @@ alias lt='ls -ltr'
 alias lm='ls -al |more'
 alias sn='supernova'
 alias inl='inova-login'
+
+redminedir () {
+    title=`rore issues $1 | awk -F: '/subject/{gsub("-", "_", $2); print $2}' | python -c "print raw_input().strip().title().replace(' ', '')"`
+    echo "$1_$title"
+}
+
+prep() {
+    if [ $# -eq 0 ]; then
+        echo "Provide redmine ticket number"
+    else
+        dir_name=`redminedir $1`
+        if [ -d "$dir_name" ]; then
+            echo "Directory already exists"
+        else
+            mkdir $dir_name
+            virtualenv $dir_name/.venv --no-site-packages --distribute --prompt="($1)"
+            rore issues $1 --verbose > $dir_name/REDMINE
+        fi
+    fi
+}
+alias overseer='raxssh 10.13.1.200'
+alias snailwork='source ~/bin/snail/.venv/bin/activate'
 alias supernovawork='source ~/bin/supernova/.venv/bin/activate'
 alias workhere='source ./.venv/bin/activate'
 alias startwork='virtualenv .venv --no-site-packages --distribute --prompt="(${PWD##*/})"'
