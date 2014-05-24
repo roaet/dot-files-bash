@@ -95,7 +95,7 @@ fi
     eval "$startup_cmd"
 }
 
-export LC_ALL=C
+export LC_ALL=en_US.UTF-8
 # export VIMRUNTIME=~/.vim_runtime
 if [ -d /Users/ ]; then
     PATH=/Users/jhammond/Library/Python/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
