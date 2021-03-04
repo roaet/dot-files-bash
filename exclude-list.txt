@@ -1,4 +1,7 @@
 README*
 .git*
 sync
+check
 .bash_history
+exclude-list.txt
+files.txt

@@ -115,3 +115,7 @@ function git_diff() {
 }
 source ~/.git-completion.bash
 git config --global alias.last 'log -1 HEAD'
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi

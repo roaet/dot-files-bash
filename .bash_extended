@@ -300,3 +300,4 @@ PS1="\[${BOLD}${CYAN}\]\u \[$BASE0\]at \[$CYAN\]\h \[$BASE0\]in \[$BLUE\]\w\[$BA
 if [ -f ~/.dir_colors ]; then
     eval `dircolors ~/.dir_colors`
 fi
+export BASH_SILENCE_DEPRECATION_WARNING=1

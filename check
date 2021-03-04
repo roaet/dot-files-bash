@@ -1,0 +1,18 @@
+#!/bin/bash
+touch files.txt
+rsync -avnc --exclude-from 'exclude-list.txt' --out-format="%o:/%f" .??* ~ | grep -e "^send.*" | awk '{split($0,a,":"); print a[2]}' >> files.txt
+rsync -avnc --exclude-from 'exclude-list.txt' --out-format="%o:/%f" *  ~ | grep -e "^send.*" | awk '{split($0,a,":"); print a[2]}' >> files.txt
+rsync -avnc .git-completion.bash --out-format="%o:/%f" ~ | grep -e "^send.*" | awk '{split($0,a,":"); print a[2]}' >> files.txt
+rsync -avnc .gitconfig --out-format="%o:/%f" ~ | grep -e "^send.*" | awk '{split($0,a,":"); print a[2]}' >> files.txt
+
+while read p; do
+  basename="$(basename -- $p)"
+  otherfile="$HOME/$basename"
+  echo "$p $otherfile"
+  sdiff -s $p $otherfile
+  echo -e "\n"
+done <files.txt
+
+
+rm files.txt
+

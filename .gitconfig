@@ -12,3 +12,6 @@
 	email = justin.hammond@rackspace.com
 [alias]
 	last = log -1 HEAD
+
+[url "git@github.com:"]
+  insteadOf = https://github.com
