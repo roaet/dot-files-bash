@@ -9,7 +9,7 @@
 
 [user]
 	name = Justin Hammond
-	email = justin.hammond@rackspace.com
+	email = <set>
 [alias]
 	last = log -1 HEAD
 
