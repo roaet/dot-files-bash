@@ -100,6 +100,13 @@ export LC_ALL=en_US.UTF-8
 if [ -d /Users/ ]; then
     PATH=/Users/jhammond/Library/Python/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 fi
+
+HOMEBREW_PREFIX="/opt/homebrew";
+HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+HOMEBREW_REPOSITORY="/opt/homebrew";
+PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 source ~/.bash_extended
 # VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 # alias tmux='TERM=xterm-256color tmux -2'
