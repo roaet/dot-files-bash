@@ -1,6 +1,3 @@
-[diff]
-    external = git_diff_wrapper
-
 [pager]
     diff = 
 
@@ -9,9 +6,11 @@
 
 [user]
 	name = Justin Hammond
-	email = <set>
+	email = jhammond@mailgun.com
+
 [alias]
 	last = log -1 HEAD
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
 
 [url "git@github.com:"]
   insteadOf = https://github.com

@@ -86,6 +86,9 @@ alias lt='ls -ltr'
 alias lm='ls -al |more'
 alias sn='supernova'
 alias inl='inova-login'
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"
 
 redminedir () {
     title=`rore issues $1 | awk -F: '/subject/{gsub("-", "_", $2); print $2}' | python -c "print raw_input().strip().title().replace(' ', '')"`
@@ -135,14 +138,16 @@ upinfo ()
 {
 echo -ne "${green}$HOSTNAME ${red}uptime is ${cyan} \t ";uptime | awk /'up/ {print $3,$4,$5,$6,$7,$8,$9,$10}'
 }
-cd() 
-{
-  if [ -n "$1" ]; then
-    builtin cd "$@" && ls
-  else
-    builtin cd ~ && ls
-  fi
-}
+
+#cd() 
+#{
+#  if [ -n "$1" ]; then
+#    builtin cd "$@" && ls
+#  else
+#    builtin cd ~ && ls
+#  fi
+#}
+
 weather ()
 {
 declare -a WEATHERARRAY
@@ -301,3 +306,13 @@ if [ -f ~/.dir_colors ]; then
     eval `dircolors ~/.dir_colors`
 fi
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+~/.ssh/saveagent
+eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
+
+if test "$SSH_AUTH_SOCK" ; then
+  ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+fi
+
+eval "$(oh-my-posh --init --shell bash --config ~/iterm2.omp.json)"

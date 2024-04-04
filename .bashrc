@@ -101,21 +101,19 @@ if [ -d /Users/ ]; then
     PATH=/Users/jhammond/Library/Python/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 fi
 source ~/.bash_extended
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-alias tmux='TERM=xterm-256color tmux -2'
-if [ -d ~/Library/Python ]; then
-    source ~/Library/Python/2.7/bin/virtualenvwrapper.sh
-fi
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+# VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+# alias tmux='TERM=xterm-256color tmux -2'
+# if [ -d ~/Library/Python ]; then
+#     source ~/Library/Python/2.7/bin/virtualenvwrapper.sh
+# fi
+# if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#     source /usr/local/bin/virtualenvwrapper.sh
+# fi
 PATH=$PATH:~/bin
+PATH=$PATH:/Users/Justin/go/bin
 function git_diff() {
     git diff --no-ext-diff -w "$@" | vim -R -
 }
 source ~/.git-completion.bash
 git config --global alias.last 'log -1 HEAD'
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+export MallocNanoZone=0
